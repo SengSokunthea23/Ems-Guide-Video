@@ -1,0 +1,20 @@
+@font-face{font-family:'Inter';font-weight:400;src:url(./fonts/inter-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:500;src:url(./fonts/inter-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:600;src:url(./fonts/inter-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:700;src:url(./fonts/inter-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:800;src:url(./fonts/inter-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'KH';font-weight:400;src:url(./fonts/kp-kh-400.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KH';font-weight:500;src:url(./fonts/kp-kh-500.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KH';font-weight:600;src:url(./fonts/kp-kh-600.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KH';font-weight:700;src:url(./fonts/kp-kh-700.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KP';font-weight:400;src:url(./fonts/kp-kh-400.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KP';font-weight:500;src:url(./fonts/kp-kh-500.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KP';font-weight:600;src:url(./fonts/kp-kh-600.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KP';font-weight:700;src:url(./fonts/kp-kh-700.woff2) format('woff2');unicode-range:U+1780-17FF,U+19E0-19FF,U+200C-200D,U+25CC}
+@font-face{font-family:'KP';font-weight:400;src:url(./fonts/kp-la-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+2010-2027,U+2190-21FF}
+@font-face{font-family:'KP';font-weight:500;src:url(./fonts/kp-la-500.woff2) format('woff2');unicode-range:U+0000-00FF,U+2010-2027,U+2190-21FF}
+@font-face{font-family:'KP';font-weight:600;src:url(./fonts/kp-la-600.woff2) format('woff2');unicode-range:U+0000-00FF,U+2010-2027,U+2190-21FF}
+@font-face{font-family:'KP';font-weight:700;src:url(./fonts/kp-la-700.woff2) format('woff2');unicode-range:U+0000-00FF,U+2010-2027,U+2190-21FF}
+*{box-sizing:border-box;margin:0;padding:0}
+.f{font-family:'Inter','KH',sans-serif;-webkit-font-smoothing:antialiased}
+.app{font-family:'KP',sans-serif;-webkit-font-smoothing:antialiased}

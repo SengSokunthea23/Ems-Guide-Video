@@ -1,0 +1,4 @@
+node_modules
+out
+# generated from the original screenshots by `npm run shots` (contains real names/phone numbers)
+public/shots
