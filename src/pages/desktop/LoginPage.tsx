@@ -1,4 +1,5 @@
 import React from 'react';
+import {Img, staticFile} from 'remotion';
 import {P, pr} from '../../lib/anim';
 import {kh} from '../../lib/format';
 import {Icon} from '../../ui/Icon';
@@ -13,7 +14,7 @@ export const LoginPage: React.FC<{t: number; stepAt: number[]; pressAt: number}>
   const press = pr(t, pressAt), loading = t > pressAt + .1;
   return (
     <div className="app" style={{position: 'absolute', inset: 0, background: li.bg, color: li.fg, opacity: P(t, 2.1, .5)}}>
-      <div style={{position: 'absolute', left: 0, top: 0, width: 760, height: 900, background: `linear-gradient(160deg,${li.grad[0]} 0%,${li.grad[1]} 55%,${li.grad[2]} 100%)`, color: '#fff', padding: '90px 70px', overflow: 'hidden'}}>
+      {/* <div style={{position: 'absolute', left: 0, top: 0, width: 760, height: 900, background: `linear-gradient(160deg,${li.grad[0]} 0%,${li.grad[1]} 55%,${li.grad[2]} 100%)`, color: '#fff', padding: '90px 70px', overflow: 'hidden'}}>
         <div style={{position: 'absolute', right: -160, top: -160, width: 520, height: 520, borderRadius: '50%', background: 'rgba(255,255,255,.07)'}} />
         <div style={{position: 'absolute', left: -120, bottom: -180, width: 460, height: 460, borderRadius: '50%', background: 'rgba(255,255,255,.05)'}} />
         <div style={{opacity: a, transform: `translateY(${(1 - a) * 20}px)`}}>
@@ -27,10 +28,10 @@ export const LoginPage: React.FC<{t: number; stepAt: number[]; pressAt: number}>
               <div style={{width: 50, height: 50, borderRadius: 14, background: 'rgba(255,255,255,.14)', display: 'grid', placeItems: 'center'}}><Icon n={ic} s={22} c="#fff" /></div>
               <div><div style={{fontWeight: 700, fontSize: 17}}>{h}</div><div style={{fontSize: 14.5, opacity: .8}}>{s}</div></div></div>); })}
         </div>
-      </div>
-      <div style={{position: 'absolute', right: 40, top: 26, height: 34, padding: '0 14px', borderRadius: 8, border: `1px solid ${li.bd}`, display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, background: '#fff', opacity: b}}>🌐 ខ្មែរ</div>
-      <div style={{position: 'absolute', left: 900, top: 150, width: 560, padding: '40px 44px', borderRadius: 20, background: '#fff', boxShadow: '0 30px 70px rgba(7,52,81,.12)', textAlign: 'center', opacity: b, transform: `translateY(${(1 - b) * 30}px)`}}>
-        <div style={{display: 'inline-block', padding: 14, borderRadius: 20, background: li.soft}}><Logo k={1.8} /></div>
+      </div> */}
+      <Img src={staticFile('shots/login-hero.png')} style={{position: 'absolute', left: -80, top: 0, height: 900, width: 'auto', maxWidth: 'none'}} />
+      <div style={{position: 'absolute', left: 1000, top: 130, width: 540, padding: '36px 40px', borderRadius: 20, background: '#fff', boxShadow: '0 30px 70px rgba(7,52,81,.12)', textAlign: 'center', opacity: b, transform: `translateY(${(1 - b) * 30}px)`}}>
+        {/* <div style={{display: 'inline-block', padding: 14, borderRadius: 20, background: li.soft}}><Logo k={1.8} /></div>
         <div style={{fontSize: 27, fontWeight: 700, marginTop: 16, lineHeight: 1.5}}>ចូលប្រើប្រព័ន្ធ</div>
         <div style={{fontSize: 15, color: li.mut}}>ចូលប្រើប្រព័ន្ធគ្រប់គ្រងព្រឹត្តិការណ៍</div>
         <div style={{marginTop: 26, height: 52, borderRadius: 12, background: li.pri, color: li.onPri, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, fontSize: 17, fontWeight: 700, transform: `scale(${1 - .04 * press})`, boxShadow: loading ? '0 0 0 4px rgba(43,128,183,.25)' : 'none'}}>
@@ -41,7 +42,8 @@ export const LoginPage: React.FC<{t: number; stepAt: number[]; pressAt: number}>
             <div key={i} style={{display: 'flex', gap: 12, alignItems: 'flex-start', padding: '9px 12px', borderRadius: 10, background: on ? li.tint : 'transparent', fontSize: 14.5, lineHeight: 1.6, transition: 'none'}}>
               <span style={{width: 24, height: 24, borderRadius: 12, flex: 'none', display: 'grid', placeItems: 'center', fontSize: 12.5, fontWeight: 700, background: on || done ? li.pri : li.line, color: on || done ? li.onPri : li.mut, marginTop: 1}}>{done ? <Icon n="check" s={13} sw={3} c="#fff" /> : kh(i + 1)}</span>
               <span style={{color: on ? li.fg : li.mut, fontWeight: on ? 600 : 400}}>{s}</span></div>); })}
-        </div>
+        </div> */}
+        <Img src={staticFile('shots/login-card.png')} style={{width: '100%', height: 'auto'}} />
       </div>
     </div>);
 };
