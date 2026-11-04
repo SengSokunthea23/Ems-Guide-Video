@@ -42,4 +42,4 @@ export const AppAt: React.FC<{t: number; th: Th}> = ({t, th}) => {
       <div style={{position: 'absolute', inset: 0, opacity: x, transform: `translateY(${(1 - x) * 14}px)`}}>{cur.r(t - cur.ps, th, t)}</div>
     </AppShell>);
 };
-export const urlAt = (t: number) => { if (t < 33.39) return `${U}/login`; let u = U; PAGES.forEach((p) => { if (t >= p.at) u = p.url; }); return u; };
+export const urlAt = (t: number) => { if (t < 33.39) return `https://${U}`; let u = U; PAGES.forEach((p) => { if (t >= p.at) u = p.url; }); return u; };

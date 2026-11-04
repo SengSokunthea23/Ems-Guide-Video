@@ -1,19 +1,15 @@
 import React from 'react';
 import {Img, staticFile} from 'remotion';
-import {P, pr} from '../../lib/anim';
-import {kh} from '../../lib/format';
-import {Icon} from '../../ui/Icon';
+import {E, P} from '../../lib/anim';
 import {useTheme} from '../../theme/ThemeContext';
-import {Logo} from '../../ui/Logo';
-export const LoginPage: React.FC<{t: number; stepAt: number[]; pressAt: number}> = ({t, stepAt, pressAt}) => {
-  const li = useTheme().app.light;
-  const a = P(t, 2.3, 1.0), b = P(t, 2.6, 1.0);
-  const feats: [string, string, string][] = [['shield', 'មានសុវត្ថិភាពខ្ពស់', 'ការពារទិន្នន័យ និងគណនីរបស់អ្នក'], ['bolt', 'រហ័ស និងងាយស្រួល', 'ចូលប្រើដោយមិនចាំបាច់ចងចាំពាក្យសម្ងាត់'], ['phone', 'ប្រើតែទូរសព្ទដៃ', 'ផ្ទៀងផ្ទាត់ដោយកម្មវិធី MOC DGKey']];
-  const steps = ['ទាញយកកម្មវិធី MOC Officer ពី Android ឬ iOS។', 'ចូលគណនី AAS តាមកម្មវិធីទូរស័ព្ទដៃ MOC Officer។', 'ចុចចូលប្រើជាមួយ MOC DGKey រួចស្កេនកូដ QR។', 'អ្នកនឹងត្រូវបានបញ្ជូនទៅកាន់ប្រព័ន្ធដោយស្វ័យប្រវត្តិ។'];
-  const cur = stepAt.reduce((k, s, i) => (t >= s ? i : k), -1);
-  const press = pr(t, pressAt), loading = t > pressAt + .1;
+export const LoginPage: React.FC<{t: number}> = ({t}) => {
+  const {light: li} = useTheme().app;
+  const page = P(t, 0, .45);
+  const hero = P(t, .15, .75, E.back);
+  const card = P(t, 1.15, .75, E.back);
+  const shine = P(t, 9.15, .25) * (1 - P(t, 10.55, .25, E.in));
   return (
-    <div className="app" style={{position: 'absolute', inset: 0, background: li.bg, color: li.fg, opacity: P(t, 2.1, .5)}}>
+    <div className="app" style={{position: 'absolute', inset: 0, background: li.bg, color: li.fg, opacity: page}}>
       {/* <div style={{position: 'absolute', left: 0, top: 0, width: 760, height: 900, background: `linear-gradient(160deg,${li.grad[0]} 0%,${li.grad[1]} 55%,${li.grad[2]} 100%)`, color: '#fff', padding: '90px 70px', overflow: 'hidden'}}>
         <div style={{position: 'absolute', right: -160, top: -160, width: 520, height: 520, borderRadius: '50%', background: 'rgba(255,255,255,.07)'}} />
         <div style={{position: 'absolute', left: -120, bottom: -180, width: 460, height: 460, borderRadius: '50%', background: 'rgba(255,255,255,.05)'}} />
@@ -29,8 +25,8 @@ export const LoginPage: React.FC<{t: number; stepAt: number[]; pressAt: number}>
               <div><div style={{fontWeight: 700, fontSize: 17}}>{h}</div><div style={{fontSize: 14.5, opacity: .8}}>{s}</div></div></div>); })}
         </div>
       </div> */}
-      <Img src={staticFile('shots/login-hero.png')} style={{position: 'absolute', left: -80, top: 0, height: 900, width: 'auto', maxWidth: 'none'}} />
-      <div style={{position: 'absolute', left: 1000, top: 130, width: 540, padding: '36px 40px', borderRadius: 20, background: '#fff', boxShadow: '0 30px 70px rgba(7,52,81,.12)', textAlign: 'center', opacity: b, transform: `translateY(${(1 - b) * 30}px)`}}>
+      <Img src={staticFile('shots/login-hero.png')} style={{position: 'absolute', left: -80, top: 0, height: 900, width: 'auto', maxWidth: 'none', opacity: hero, transform: `scale(${.97 + .03 * hero})`, transformOrigin: '50% 50%'}} />
+      <div style={{position: 'absolute', left: 1000, top: 130, width: 540, textAlign: 'center', opacity: card, transform: `translateY(${(1 - card) * 32}px) scale(${.93 + .07 * card})`, transformOrigin: '50% 0', filter: 'drop-shadow(0 26px 48px rgba(7,52,81,.15))'}}>
         {/* <div style={{display: 'inline-block', padding: 14, borderRadius: 20, background: li.soft}}><Logo k={1.8} /></div>
         <div style={{fontSize: 27, fontWeight: 700, marginTop: 16, lineHeight: 1.5}}>ចូលប្រើប្រព័ន្ធ</div>
         <div style={{fontSize: 15, color: li.mut}}>ចូលប្រើប្រព័ន្ធគ្រប់គ្រងព្រឹត្តិការណ៍</div>
@@ -43,7 +39,12 @@ export const LoginPage: React.FC<{t: number; stepAt: number[]; pressAt: number}>
               <span style={{width: 24, height: 24, borderRadius: 12, flex: 'none', display: 'grid', placeItems: 'center', fontSize: 12.5, fontWeight: 700, background: on || done ? li.pri : li.line, color: on || done ? li.onPri : li.mut, marginTop: 1}}>{done ? <Icon n="check" s={13} sw={3} c="#fff" /> : kh(i + 1)}</span>
               <span style={{color: on ? li.fg : li.mut, fontWeight: on ? 600 : 400}}>{s}</span></div>); })}
         </div> */}
-        <Img src={staticFile('shots/login-card.png')} style={{width: '100%', height: 'auto'}} />
+        <div style={{position: 'relative', width: '100%'}}>
+          <Img src={staticFile('shots/login-card.png')} style={{width: '100%', height: 'auto'}} />
+          <div style={{position: 'absolute', left: '5%', top: '48.5%', width: '90%', height: '14.5%', overflow: 'hidden', borderRadius: 16, opacity: shine}}>
+            <div style={{position: 'absolute', inset: 0, width: '55%', transform: `translateX(${-110 + shine * 300}%) skewX(-18deg)`, background: 'linear-gradient(100deg, transparent, rgba(255,255,255,.72), rgba(255,255,255,.12), transparent)', mixBlendMode: 'screen'}} />
+          </div>
+        </div>
       </div>
     </div>);
 };

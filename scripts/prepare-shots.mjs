@@ -26,7 +26,7 @@ const SHOTS = [
   ['dash', path.join(LP, 'Html → Body after login.png'), PAGE_W],
   ['dash-dark', path.join(LP, 'Html → Body after login dark color.png'), PAGE_W],
   ['dash-skel', path.join(LP, 'Html → Body after login1.png'), PAGE_W],
-  ['events', path.join(LP, 'ព្រឹត្តិការណ Sidebar.png'), PAGE_W],
+  ['events', path.join(LP, 'ព្រឹត្តិការណ៍ Sidebar.png'), PAGE_W],
   ...Array.from({length: 10}, (_, i) => [`events-h${i + 1}`, path.join(LP, 'ព្រឹត្តិការណ៍', `Html → Body${i + 1}.png`), PAGE_W]),
   ['detail', path.join(LP, 'កិច្ចប្រជុំតាមដានវឌ្ឍនភាពប្រចាំខែរបស់អគ្គនាយកដ្ឋានក្នុងប្រទេស.png'), PAGE_W],
   ['venues', path.join(LP, 'ទីកន្លែង.png'), PAGE_W],

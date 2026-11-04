@@ -34,9 +34,9 @@ export type Pose = {fx: number; fy: number; s: number; sx: number; sy: number; r
 export const DEF: Pose = {fx: 800, fy: 472, s: .9, sx: 960, sy: 585, rx: 0, o: 1};
 export const CAM: {at: number; d: number; to: Partial<Pose>}[] = [
   {at: 0, d: .01, to: {sy: 1500, o: 0, rx: 14}}, {at: 6.9, d: 1.4, to: {sy: 585, o: 1, rx: 0}},
-  {at: 12.95, d: 1.2, to: {fx: 1180, fy: 520, s: 1.25}}, {at: 20.6, d: 1.0, to: DEF},
+  {at: 12.95, d: 1.2, to: {fx: 1180, fy: 520, s: 1.25}}, {at: 20.6, d: 1.25, to: {fx: 800, fy: 472, s: .62, sx: 610, sy: 560}},
   {at: 22.96, d: 1.0, to: {s: .5, sx: 560, sy: 600}},
-  {at: 33.4, d: .01, to: {...DEF, s: .8, rx: 22, sy: 640}}, {at: 34.0, d: 1.8, to: {s: .9, rx: 0, sy: 585}},
+  {at: 33.4, d: .01, to: {...DEF, s: .8, rx: 8, sy: 640}}, {at: 34.0, d: 1.8, to: {s: .9, rx: 0, sy: 585}},
   {at: 38.4, d: 1.0, to: {fx: 1420, fy: 170, s: 1.7}}, {at: 41.9, d: 1.0, to: DEF}, {at: 42.8, d: 1.0, to: {fx: 800, fy: 760, s: 1.15}}, {at: 44.6, d: 1.0, to: {fx: 1380, fy: 220, s: 1.45}}, {at: 46.3, d: 1.0, to: DEF},
   {at: 54.0, d: 1.0, to: {fx: 1000, fy: 330, s: 1.3}}, {at: 59.2, d: .9, to: DEF}, {at: 63.6, d: 1.0, to: {fx: 1072, fy: 506, s: 1.5}}, {at: 66.0, d: 1.0, to: {fx: 1400, fy: 506, s: 1.5}}, {at: 67.6, d: .9, to: DEF},
   {at: 69.6, d: 1.0, to: {fx: 800, fy: 470, s: 1.12}}, {at: 73.2, d: .9, to: DEF}, {at: 78.3, d: .9, to: {fx: 916, fy: 360, s: 1.4}}, {at: 80.4, d: .8, to: DEF},
